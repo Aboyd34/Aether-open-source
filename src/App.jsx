@@ -1,18 +1,16 @@
 import React from "react";
+import logo from "./assets/image.png";  // <-- your image here
+import "./index.css";
 
 export default function App() {
   return (
-    <div style={{
-      backgroundColor: "#0f172a",
-      color: "#e2e8f0",
-      minHeight: "100vh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexDirection: "column"
-    }}>
-      <h1>Aether — Privacy Core</h1>
-      <p>Secure. Private. Open Source.</p>
+    <div className="app">
+      <header className="header">
+        <img src={logo} alt="Cipher Sigil" className="cipher-logo" />
+      </header> <-- You need this closing tag!
+      <div className="container">
+        <h1 className="h1">Welcome to Aether</h1>
+      </div>
     </div>
   );
 }

@@ -1,23 +1,22 @@
-cat > ~/aether/src/index.css << 'EOF'
-:root{
-  --cipher-primary: #1C2D4F;   /* Deep slate (Primary) */
-  --cipher-accent: #00B2FF;    /* Electric cyan (Accent) */
-  --cipher-neutral: #C0C0C0;   /* Matte silver (Neutral/Text) */
+:root {
+  --cipher-primary: #0A0A0A;   /* Obsidian Black (Background / Identity Perimeter) */
+  --cipher-accent: #00B2FF;   /* Electric Blue (Keyhole / Glow) */
+  --cipher-neutral: #C0C0C0;  /* Cipher Gold (Banner / Text) */
   --cipher-card: rgba(255,255,255,0.03);
   --cipher-danger: #E34C4C;
   --cipher-success: #34d399;
 }
 
 /* Reset + global */
-*{box-sizing:border-box}
-html,body,#root{height:100%}
-body{
-  margin:0;
+* { box-sizing: border-box }
+html, body, #root { height: 100% }
+body {
+  margin: 0;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: var(--cipher-primary);
   color: var(--cipher-neutral);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Layout helpers */
@@ -29,58 +28,63 @@ body{
 
 /* Header */
 .header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 12px 16px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(255,255,255,0.02));
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(255,255,255,0.02));
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 .header .brand {
-  display:flex;
-  align-items:center;
-  gap:12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.cipher-logo { display:block; }
+.cipher-logo {
+  display: block;
+  height: 32px;
+  width: auto;
+  filter: drop-shadow(0 0 4px var(--cipher-accent));
+}
 
 /* Cards & panels */
 .container {
-  width:100%;
-  max-width:1100px;
+  width: 100%;
+  max-width: 1100px;
   margin: 20px auto;
   padding: 0 16px;
 }
 .grid {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
-@media(min-width:900px){
+@media(min-width:900px) {
   .grid { grid-template-columns: 1fr 420px; }
 }
 
-.card{
+.card {
   background: var(--cipher-card);
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
   border-radius: 12px;
   padding: 16px;
   color: var(--cipher-neutral);
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 
-/* buttons */
+/* Buttons */
 .btn {
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 14px;
-  border-radius:10px;
-  font-weight:600;
-  cursor:pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
   border: none;
 }
 .btn-primary {
-  background: linear-gradient(180deg,var(--cipher-accent), #0099cc);
+  background: linear-gradient(180deg, var(--cipher-accent), #0099cc);
   color: var(--cipher-primary);
 }
 .btn-danger {
@@ -88,17 +92,27 @@ body{
   color: white;
 }
 
-/* text */
-.h1 { font-size:20px; font-weight:700; color:var(--cipher-accent); margin:0 }
-.small { font-size:13px; color: rgba(192,192,192,0.9) }
+/* Text */
+.h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cipher-accent);
+  margin: 0;
+}
+.small {
+  font-size: 13px;
+  color: rgba(192,192,192,0.9);
+}
 
-/* key manager / layout niceties */
-.key-manager .status { margin-bottom:8px; font-size:13px }
+/* Key manager / layout niceties */
+.key-manager .status {
+  margin-bottom: 8px;
+  font-size: 13px;
+}
 .footer {
   margin-top: 28px;
   padding: 18px 0;
-  text-align:center;
+  text-align: center;
   color: rgba(192,192,192,0.7);
-  font-size:13px;
+  font-size: 13px;
 }
-
