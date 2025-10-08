@@ -1,0 +1,3 @@
+git add .github/workflows/node-build.yml
+git add .github/workflows/secret_scan.yml
+git commit -m "Add CI: build/test and secret scan workflows"
