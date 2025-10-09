@@ -1,4 +1,6 @@
-// src/AetherApp.jsx
+import ClaudeAgent from './components/agents/ClaudeAgent';
+import PerplexityAgent from './components/agents/PerplexityAgent';
+import PolitAgent from './components/agents/PolitAgent';// src/AetherApp.jsx
 import React, { useState } from "react";
 import { generateAndStoreKeys, encryptMessage, decryptMessage, deleteKeys } from "./AetherKeyManager";
 import "./index.css";
