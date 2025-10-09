@@ -39,6 +39,28 @@ export default function AetherApp() {
       <p>{status}</p>
 
       <textarea
+  value={message}
+  onChange={(e) => setMessage(e.target.value)}
+  placeholder="Type your secret message..."
+></textarea>
+
+<div className="buttons">
+  <button onClick={handleGenerate}>Generate Keys</button>
+  <button onClick={handleEncrypt}>Encrypt</button>
+  <button onClick={handleDecrypt}>Decrypt</button>
+  <button onClick={handleDelete}>Delete Keys</button>
+
+  {/* Workflow Agent Buttons */}
+  <button onClick={() => handleWorkflow('debug', { test: message })}>
+    Debug Message
+  </button>
+  <button onClick={() => handleWorkflow('analyze', message)}>
+    Analyze Message
+  </button>
+  <button onClick={() => handleWorkflow('log', { type: 'push', details: { content: message } })}>
+    Log Message Push
+  </button>
+</div>
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Type your secret message..."
