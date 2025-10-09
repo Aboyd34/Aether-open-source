@@ -1,118 +1,79 @@
-:root {
-  --cipher-primary: #0A0A0A;   /* Obsidian Black (Background / Identity Perimeter) */
-  --cipher-accent: #00B2FF;   /* Electric Blue (Keyhole / Glow) */
-  --cipher-neutral: #C0C0C0;  /* Cipher Gold (Banner / Text) */
-  --cipher-card: rgba(255,255,255,0.03);
-  --cipher-danger: #E34C4C;
-  --cipher-success: #34d399;
-}
-
-/* Reset + global */
-* { box-sizing: border-box }
-html, body, #root { height: 100% }
+/* Global Styles - Cipher Sigil Aesthetic */
 body {
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: var(--cipher-primary);
-  color: var(--cipher-neutral);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0A0A0A; /* Obsidian Black */
+  color: #00B2FF; /* Electric Blue */
+  overflow-x: hidden;
 }
 
-/* Layout helpers */
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+h1, h2, h3, h4, h5, h6 {
+  color: #00B2FF;
+  text-shadow: 0 0 5px #00B2FF, 0 0 10px #00B2FF;
 }
 
-/* Header */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(255,255,255,0.02));
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.header .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.cipher-logo {
-  display: block;
-  height: 32px;
-  width: auto;
-  filter: drop-shadow(0 0 4px var(--cipher-accent));
+button {
+  background-color: #0A0A0A;
+  color: #00B2FF;
+  border: 1px solid #00B2FF;
+  padding: 8px 16px;
+  margin: 4px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  transition: 0.2s all ease-in-out;
 }
 
-/* Cards & panels */
+button:hover {
+  background-color: #00B2FF;
+  color: #0A0A0A;
+  box-shadow: 0 0 10px #00B2FF, 0 0 20px #00B2FF;
+}
+
 .container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 0 16px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-@media(min-width:900px) {
-  .grid { grid-template-columns: 1fr 420px; }
+  padding: 20px;
 }
 
 .card {
-  background: var(--cipher-card);
-  border: 1px solid rgba(255,255,255,0.04);
-  border-radius: 12px;
+  background-color: #111111;
+  border: 1px solid #00B2FF;
+  border-radius: 8px;
   padding: 16px;
-  color: var(--cipher-neutral);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  margin: 12px 0;
+  box-shadow: 0 0 8px #00B2FF;
 }
 
-/* Buttons */
-.btn {
-  display: inline-flex;
+input, textarea {
+  background-color: #0A0A0A;
+  color: #00B2FF;
+  border: 1px solid #00B2FF;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px #00B2FF;
+}
+
+nav {
+  background-color: #0A0A0A;
+  border-bottom: 1px solid #00B2FF;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-}
-.btn-primary {
-  background: linear-gradient(180deg, var(--cipher-accent), #0099cc);
-  color: var(--cipher-primary);
-}
-.btn-danger {
-  background: var(--cipher-danger);
-  color: white;
 }
 
-/* Text */
-.h1 {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--cipher-accent);
-  margin: 0;
-}
-.small {
-  font-size: 13px;
-  color: rgba(192,192,192,0.9);
+nav a {
+  color: #00B2FF;
+  margin-left: 16px;
+  text-decoration: none;
+  transition: 0.2s color ease-in-out;
 }
 
-/* Key manager / layout niceties */
-.key-manager .status {
-  margin-bottom: 8px;
-  font-size: 13px;
-}
-.footer {
-  margin-top: 28px;
-  padding: 18px 0;
-  text-align: center;
-  color: rgba(192,192,192,0.7);
-  font-size: 13px;
+nav a:hover {
+  color: #FFFFFF;
+  text-shadow: 0 0 5px #00B2FF;
 }
